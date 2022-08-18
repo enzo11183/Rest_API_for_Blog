@@ -16,3 +16,13 @@ class Post(models.Model):
         return self.title + ' | ' + str(self.author)
     def get_absolute_url(self):
         return reverse('BlogApp:blog_detail', args=[self.id])
+
+
+class Comment(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    body = models.TextField(blank=False)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='post_comments' )
+    post = models.ForeignKey('Post', on_delete=models.CASCADE, related_name='post_comments')
+
+    class Meta:
+        ordering = ('-created',)
