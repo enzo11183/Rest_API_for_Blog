@@ -7,7 +7,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     
     class Meta:
         model = User
-        fields = ['url', 'id', 'username', 'is_superuser', 'blog_posts']
+        fields = ['url', 'id', 'username', 'is_superuser', 'blog_posts', 'post_comments']
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
     author = serializers.ReadOnlyField(source = 'author.username')

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\api_basic",
+    "\\myAPI"
   ],
-  "SelectedNode": "\\api_basic",
+  "SelectedNode": "\\api_basic\\serializers.py",
   "PreviewInSolutionExplorer": false
 }
